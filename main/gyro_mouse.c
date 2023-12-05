@@ -25,11 +25,12 @@ static const char *TAG = "demo";
 bool rl_flag = false;
 bool init_kb = false;
 
-#define MOUSE_ACTIVE_PIN GPIO_NUM_5
-#define MOUSE_LB_PIN GPIO_NUM_41
+#define MOUSE_ACTIVE_PIN CONFIG_MOUSE_EN_TOUCH_BUTTON
+#define MOUSE_LB_PIN CONFIG_MOUSE_LMB_BUTTON
 
-#define SENSITIVITY_X 0.7 ///< 70% sensitivity
-#define SENSITIVITY_Y 0.7 ///< 70% sensitivity
+#define SENSITIVITY_X (CONFIG_MOUSE_SENSITIVITY_X / 100.0f)
+#define SENSITIVITY_Y (CONFIG_MOUSE_SENSITIVITY_Y / 100.0f)
+
 /************* TinyUSB descriptors ****************/
 
 #define TUSB_DESC_TOTAL_LEN      (TUD_CONFIG_DESC_LEN + CFG_TUD_HID * TUD_HID_DESC_LEN)

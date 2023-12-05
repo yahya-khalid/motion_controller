@@ -1,0 +1,39 @@
+menu "Motion Controller Configuration"
+
+    config GYRO_MOUSE_EN
+        bool "Enable Gyro Mouse"
+        default n
+        help
+            Select to rnable gyro mouse functionality
+
+    config MOUSE_EN_TOUCH_BUTTON
+        int "Touch Button GPIO select"
+        default 5
+        help
+            Select GPIO number for capacitive touch button used for mouse activation.
+        depends on GYRO_MOUSE_EN
+    
+    config MOUSE_LMB_BUTTON
+        int "Left mouse button GPIO select"
+        default 41
+        help
+            Select GPIO number for left mouse button.
+        depends on GYRO_MOUSE_EN
+
+    config MOUSE_SENSITIVITY_X
+        int "Adjust sensitivity of mouse x-axis"
+        range 0 100
+        default 70
+        help
+            Percentage sensitivity of mouse x-axis.
+        depends on GYRO_MOUSE_EN
+    
+    config MOUSE_SENSITIVITY_Y
+        int "Adjust sensitivity of mouse y-axis"
+        range 0 100
+        default 70
+        help
+            Percentage sensitivity of mouse y-axis.
+        depends on GYRO_MOUSE_EN
+
+endmenu
