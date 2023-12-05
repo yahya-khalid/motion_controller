@@ -3,3 +3,4 @@ Following repository contains code for a motion controller for gaming purposes t
 
 ### Pre-requisites
 - ESP-IDF 5.1
+- M5Stack AtomS3 Board
